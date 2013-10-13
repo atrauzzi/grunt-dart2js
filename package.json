@@ -1,7 +1,7 @@
 {
   "name": "grunt-dart2js",
   "description": "Compile Dart to JavaScript.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "homepage": "https://github.com/atrauzzi/grunt-dart2js",
   "author": {
     "name": "Alexander Trauzzi",
@@ -29,6 +29,11 @@
     "grunt": "~0.4.1"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "dart",
+    "google",
+    "transpile",
+    "transpiler",
+    "javascript"
   ]
 }

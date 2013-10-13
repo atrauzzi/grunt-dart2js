@@ -16,10 +16,8 @@ module.exports = function (grunt) {
 		// Configuration to be run (and then tested).
 		dart2js: {
 			compile: {
-				options: {
-				},
 				files: {
-					"public/main.js": "app/dart/main.dart",
+					"public/main.js": "app/dart/main.dart"
 				}
 			}
 		},

@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 		// Merge task-specific and/or target-specific options with these defaults.
 		var options = this.options({
 			// If someone just quickly grabbed the Dart SDK, it's likely to be here.
-			"dart2js_bin": "~/dart/dart-sdk/bin/dart2js",
+			"dart2js_bin": "$HOME/dart/dart-sdk/bin/dart2js",
 			"minify": false
 		});
 

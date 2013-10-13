@@ -11,13 +11,14 @@
 module.exports = function(grunt) {
 
 	var numCPUs = require('os').cpus().length;
+	var homeDir = process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
 
 	grunt.registerMultiTask('dart2js', 'Compile Dart to JavaScript.', function() {
 
 		// Merge task-specific and/or target-specific options with these defaults.
 		var options = this.options({
 			// If someone just quickly grabbed the Dart SDK, it's likely to be here.
-			"dart2js_bin": "$HOME/dart/dart-sdk/bin/dart2js",
+			"dart2js_bin": homeDir + "/dart/dart-sdk/bin/dart2js",
 			"minify": false
 		});
 

@@ -44,7 +44,5 @@ Default value: `false`
 A boolean indicating whether you'd like to run the minifaction step of the `dart2js` compiler.
 
 
-### Usage Examples
-
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).

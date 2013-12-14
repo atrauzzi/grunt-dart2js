@@ -51,7 +51,9 @@ module.exports = function(grunt) {
 					}
 				},
 				function (error, result, code) {
-					grunt.log.writeln("Error code:" + error);
+					if (error){
+						grunt.log.writeln("Error code:" + error);
+					}
 					next(error);
 				}
 			);

@@ -19,7 +19,8 @@ module.exports = function(grunt) {
 		var options = this.options({
 			// If someone just quickly grabbed the Dart SDK, it's likely to be here.
 			"dart2js_bin": homeDir + "/dart/dart-sdk/bin/dart2js",
-			"minify": false
+			"minify": false,
+			"checked": false
 		});
 
 		// For every target & source, async to the number of CPUs.
@@ -40,6 +41,9 @@ module.exports = function(grunt) {
 			// If minification is desired (probably not).
 			if(options.minify) {
 				args.push("--minify");
+			}
+			if(options.checked) {
+				args.push("--checked");
 			}
 
 			var process = grunt.util.spawn(

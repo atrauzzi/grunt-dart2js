@@ -43,6 +43,12 @@ Default value: `false`
 
 A boolean indicating whether you'd like to run the minifaction step of the `dart2js` compiler.
 
+#### options.checked
+Type: `Boolean`
+Default value: `false`
+
+A boolean indicating whether you'd like to run `dart2js` with the `--checked` flag.
+
 #### options.dart2js_bin
 Type: `Path`
 Default value: `~/dart/dart-sdk/bin/dart2js`

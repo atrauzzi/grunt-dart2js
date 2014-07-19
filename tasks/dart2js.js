@@ -10,8 +10,8 @@
 
 module.exports = function(grunt) {
 
-	var numCPUs = require('os').cpus().length;
-	var homeDir = process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
+	var numCPUs = require('os').cpus().length,
+	    homeDir = process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
 
 	grunt.registerMultiTask('dart2js', 'Compile Dart to JavaScript.', function() {
 
@@ -20,7 +20,16 @@ module.exports = function(grunt) {
 			// If someone just quickly grabbed the Dart SDK, it's likely to be here.
 			"dart2js_bin": homeDir + "/dart/dart-sdk/bin/dart2js",
 			"minify": false,
-			"checked": false
+			"checked": false,
+			"packageRoot": null,
+			"verbose": false,
+			"serverSide": false,
+			"signatuesOnly": false,
+			"analyzeOnly": false,
+			"analyzeAll": false,
+			"terse": false,
+			"supressWarning": false,
+			"supressHints": false
 		});
 
 		// For every target & source, async to the number of CPUs.
@@ -42,8 +51,45 @@ module.exports = function(grunt) {
 			if(options.minify) {
 				args.push("--minify");
 			}
+			
 			if(options.checked) {
 				args.push("--checked");
+			}
+			
+			if(options.packageRoot != null){
+				args.push("--package-root="+options.packageRoot);
+			}
+			
+			if(options.verbose){
+				args.push("--verbose");
+			}
+			
+			if(options.serverSide){
+				args.push("--categories=Server");
+			}
+			
+			if(options.signatuesOnly){
+				args.push("--analyze-signatures-only");
+			}
+			
+			if(options.analyzeOnly){
+				args.push("--analyze-only");
+			}
+			
+			if(options.analyzeAll){
+				args.push("--analyze-all");
+			}
+			
+			if(options.terse){
+				args.push("--terse");
+			}
+			
+			if(options.supressWarning){
+				args.push("--suppress-warnings");
+			}
+			
+			if(options.supressHints){
+				args.push("--suppress-hints");
 			}
 
 			var process = grunt.util.spawn(
